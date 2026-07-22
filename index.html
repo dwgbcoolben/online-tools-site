@@ -6,12 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在线多功能工具箱 | Multi Tools</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 自动切换电脑/手机广告样式 -->
+    <style>
+        .desktop-banner { display:block; }
+        .mobile-banner { display:none; }
+        @media (max-width:768px){
+            .desktop-banner { display:none; }
+            .mobile-banner { display:block; }
+        }
+        .ad-box{
+            margin:20px auto;
+            padding:12px;
+            background:#1e2947;
+            border-radius:12px;
+            min-height:90px;
+            text-align:center;
+        }
+    </style>
+    <!-- 之后把Adsterra验证meta标签粘贴在这里 -->
 </head>
 <body>
     <div class="lang-box">
         <button id="langBtn">English</button>
     </div>
     <div class="容器">
+        <!-- 顶部广告位：电脑728×90 / 手机320×50 -->
+        <div class="ad-box ad-top">
+            <div class="desktop-banner">
+                <!-- 粘贴728×90横幅广告代码 -->
+                <p style="color:#aaa">728×90 Desktop Banner Ad</p>
+            </div>
+            <div class="mobile-banner">
+                <!-- 粘贴320×50手机横幅广告代码 -->
+                <p style="color:#aaa">320×50 Mobile Banner Ad</p>
+            </div>
+        </div>
+
         <header class="网站头部">
             <h1 data-zh="免费在线工具箱" data-en="Free Online Tools">免费在线工具箱</h1>
             <p data-zh="计时器 | 计算器 | 随机数 | 密码生成 | 单位换算 | 自定义倒计时" data-en="Timer | Calculator | Random | Password | Unit Convert | Countdown">计时器 | 计算器 | 随机数 | 密码生成 | 单位换算 | 自定义倒计时</p>
@@ -110,7 +140,7 @@
             <button id="calcUnit" data-zh="开始换算" data-en="Convert">开始换算</button>
         </div>
 
-        <!-- 6.自定义倒计时（新增） -->
+        <!-- 6.自定义倒计时 -->
         <div class="工具面板 countdown">
             <h2 data-zh="自定义倒计时" data-en="Custom Countdown">自定义倒计时</h2>
             <div class="随机输入区">
@@ -129,6 +159,12 @@
                 <button id="cdPause" data-zh="暂停" data-en="Pause">暂停</button>
                 <button id="cdReset" data-zh="重置" data-en="Reset">重置</button>
             </div>
+        </div>
+
+        <!-- 底部广告位：300×250 矩形广告 -->
+        <div class="ad-box ad-bottom">
+            <!-- 粘贴300×250矩形广告代码 -->
+            <p style="color:#aaa">300×250 Rectangle Ad</p>
         </div>
     </div>
 
