@@ -2,6 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <!-- 关键修复：解决css、js加载空白 -->
+    <base href="/online-tools-site/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在线多功能工具箱</title>
     <link rel="stylesheet" href="style.css">
