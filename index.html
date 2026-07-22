@@ -4,53 +4,131 @@
     <meta charset="UTF-8">
     <base href="/online-tools-site/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在线多功能工具箱</title>
+    <title>在线多功能工具箱 | Multi Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="lang-box">
+        <button id="langBtn">English</button>
+    </div>
     <div class="容器">
         <header class="网站头部">
-            <h1>免费在线工具箱</h1>
-            <p>计时器 | 计算器 | 随机数生成器</p>
+            <h1 data-zh="免费在线工具箱" data-en="Free Online Tools">免费在线工具箱</h1>
+            <p data-zh="计时器 | 计算器 | 随机数 | 密码生成 | 单位换算 | 自定义倒计时" data-en="Timer | Calculator | Random | Password | Unit Convert | Countdown">计时器 | 计算器 | 随机数 | 密码生成 | 单位换算 | 自定义倒计时</p>
         </header>
 
         <div class="工具导航栏">
-            <button class="工具标签 激活" data-tool="timer">计时器</button>
-            <button class="工具标签" data-tool="calc">计算器</button>
-            <button class="工具标签" data-tool="random">随机数</button>
+            <button class="工具标签 激活" data-tool="timer" data-zh="计时器" data-en="Timer">计时器</button>
+            <button class="工具标签" data-tool="calc" data-zh="计算器" data-en="Calculator">计算器</button>
+            <button class="工具标签" data-tool="random" data-zh="随机数" data-en="Random">随机数</button>
+            <button class="工具标签" data-tool="pwd" data-zh="密码生成" data-en="Password">密码生成</button>
+            <button class="工具标签" data-tool="unit" data-zh="单位换算" data-en="Unit Convert">单位换算</button>
+            <button class="工具标签" data-tool="countdown" data-zh="自定义倒计时" data-en="Countdown">自定义倒计时</button>
         </div>
 
+        <!-- 1.秒表计时器 -->
         <div class="工具面板 timer 显示">
-            <h2>秒表 / 倒计时</h2>
+            <h2 data-zh="秒表" data-en="Stopwatch">秒表</h2>
             <div class="时间数字" id="计时显示">00:00:00</div>
             <div class="按钮组">
-                <button id="计时开始">开始</button>
-                <button id="计时暂停">暂停</button>
-                <button id="计时重置">重置</button>
+                <button id="计时开始" data-zh="开始" data-en="Start">开始</button>
+                <button id="计时暂停" data-zh="暂停" data-en="Pause">暂停</button>
+                <button id="计时重置" data-zh="重置" data-en="Reset">重置</button>
             </div>
         </div>
 
+        <!-- 2.计算器 -->
         <div class="工具面板 calc">
-            <h2>简易计算器</h2>
+            <h2 data-zh="简易计算器" data-en="Simple Calculator">简易计算器</h2>
             <input type="text" id="计算输入框" readonly>
             <div class="计算按键区">
                 <button>7</button><button>8</button><button>9</button><button>+</button>
                 <button>4</button><button>5</button><button>6</button><button>-</button>
                 <button>1</button><button>2</button><button>3</button><button>*</button>
                 <button>0</button><button>.</button><button>=</button><button>/</button>
-                <button class="清空键">清空</button>
+                <button class="清空键" data-zh="清空" data-en="Clear">清空</button>
             </div>
         </div>
 
+        <!-- 3.随机数 -->
         <div class="工具面板 random">
-            <h2>随机数字生成</h2>
+            <h2 data-zh="随机数字生成" data-en="Random Number Generator">随机数字生成</h2>
             <div class="随机输入区">
+                <span data-zh="最小值" data-en="Min">最小值</span>
                 <input type="number" id="最小值" value="1">
                 <span> ~ </span>
+                <span data-zh="最大值" data-en="Max">最大值</span>
                 <input type="number" id="最大值" value="100">
             </div>
             <div class="随机结果" id="随机数字">0</div>
-            <button id="生成按钮">生成随机数</button>
+            <button id="生成按钮" data-zh="生成随机数" data-en="Generate">生成随机数</button>
+        </div>
+
+        <!-- 4.密码生成器 -->
+        <div class="工具面板 pwd">
+            <h2 data-zh="高强度密码生成器" data-en="Password Generator">高强度密码生成器</h2>
+            <div style="margin:20px 0;">
+                <label data-zh="密码长度：" data-en="Length:">密码长度：</label>
+                <input type="number" id="pwdLen" value="16" min="6" max="32">
+            </div>
+            <div style="margin-bottom:20px;">
+                <input type="checkbox" id="pwdNum" checked>
+                <span data-zh="包含数字" data-en="Number">包含数字</span>
+                <input type="checkbox" id="pwdUpper" checked>
+                <span data-zh="大写字母" data-en="Uppercase">大写字母</span>
+                <input type="checkbox" id="pwdLower" checked>
+                <span data-zh="小写字母" data-en="Lowercase">小写字母</span>
+                <input type="checkbox" id="pwdSym" checked>
+                <span data-zh="特殊符号" data-en="Symbol">特殊符号</span>
+            </div>
+            <div class="随机结果" id="pwdOutput" data-zh="点击生成" data-en="Click Generate">点击生成</div>
+            <button id="createPwd" data-zh="一键生成密码" data-en="Create Password">一键生成密码</button>
+        </div>
+
+        <!-- 5.单位换算 -->
+        <div class="工具面板 unit">
+            <h2 data-zh="长度单位换算" data-en="Length Converter">长度单位换算</h2>
+            <div style="margin:20px 0;">
+                <input type="number" id="unitNum" placeholder="输入数值">
+                <select id="unitFrom">
+                    <option value="m">米(m)</option>
+                    <option value="cm">厘米(cm)</option>
+                    <option value="km">千米(km)</option>
+                    <option value="inch">英寸(inch)</option>
+                    <option value="ft">英尺(ft)</option>
+                </select>
+                <span data-zh="转" data-en="to">转</span>
+                <select id="unitTo">
+                    <option value="m">米(m)</option>
+                    <option value="cm">厘米(cm)</option>
+                    <option value="km">千米(km)</option>
+                    <option value="inch">英寸(inch)</option>
+                    <option value="ft">英尺(ft)</option>
+                </select>
+            </div>
+            <div class="随机结果" id="unitResult" data-zh="换算结果" data-en="Result">换算结果</div>
+            <button id="calcUnit" data-zh="开始换算" data-en="Convert">开始换算</button>
+        </div>
+
+        <!-- 6.自定义倒计时（新增） -->
+        <div class="工具面板 countdown">
+            <h2 data-zh="自定义倒计时" data-en="Custom Countdown">自定义倒计时</h2>
+            <div class="随机输入区">
+                <span>H</span>
+                <input type="number" id="cdH" value="0" min="0" max="99">
+                <span>:</span>
+                <span>M</span>
+                <input type="number" id="cdM" value="0" min="0" max="59">
+                <span>:</span>
+                <span>S</span>
+                <input type="number" id="cdS" value="10" min="0" max="59">
+            </div>
+            <div class="时间数字" id="cdShow">00:00:10</div>
+            <div class="按钮组">
+                <button id="cdStart" data-zh="开始倒计时" data-en="Start">开始倒计时</button>
+                <button id="cdPause" data-zh="暂停" data-en="Pause">暂停</button>
+                <button id="cdReset" data-zh="重置" data-en="Reset">重置</button>
+            </div>
         </div>
     </div>
 
