@@ -9,11 +9,29 @@ body {
     background-color: #121829;
     color: #fff;
     min-height: 100vh;
-    padding: 40px 10px;
+    padding: 60px 10px 40px;
+}
+
+.lang-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#langBtn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background: #2196f3;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+#langBtn:hover {
+    background: #1976d2;
 }
 
 .容器 {
-    max-width: 650px;
+    max-width: 720px;
     margin: 0 auto;
     text-align: center;
 }
@@ -31,17 +49,18 @@ body {
 
 .工具导航栏 {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
     margin-bottom: 30px;
 }
 .工具标签 {
-    padding: 11px 24px;
+    padding: 11px 18px;
     border: none;
     border-radius: 9px;
     background: #222b45;
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     cursor: pointer;
 }
 .工具标签.激活 {
@@ -77,6 +96,7 @@ body {
     display: flex;
     gap: 15px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .按钮组 button {
     padding: 13px 26px;
@@ -86,9 +106,9 @@ body {
     color: white;
     cursor: pointer;
 }
-#计时开始 {background: #2e7d32;}
-#计时暂停 {background: #f57c00;}
-#计时重置 {background: #c62828;}
+#计时开始,#cdStart {background: #2e7d32;}
+#计时暂停,#cdPause {background: #f57c00;}
+#计时重置,#cdReset {background: #c62828;}
 
 #计算输入框 {
     width: 100%;
@@ -130,6 +150,7 @@ body {
     align-items: center;
     margin-bottom: 25px;
     font-size: 22px;
+    flex-wrap: wrap;
 }
 .随机输入区 input {
     width: 100px;
@@ -146,7 +167,7 @@ body {
     color: #42a5f5;
     margin-bottom: 25px;
 }
-#生成按钮 {
+#生成按钮,#createPwd,#calcUnit {
     padding: 14px 32px;
     font-size: 18px;
     border: none;
@@ -155,6 +176,6 @@ body {
     color: white;
     cursor: pointer;
 }
-#生成按钮:hover {
+#生成按钮:hover,#createPwd:hover,#calcUnit:hover {
     background: #1565c0;
 }
